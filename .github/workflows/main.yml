@@ -1,9 +1,13 @@
 name: Terraform
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
+    paths-ignore:
+       - .github/workflows/main.yml
+       - README.md
 
 jobs:
   terraform:
@@ -45,4 +49,5 @@ jobs:
 
       # Step 7: Apply Terraform changes
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform destroy -auto-approve
+      
