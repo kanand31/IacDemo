@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "demo" {
-    name = "demorg"
+    name = "katestlearning"
     location = var.vnet_location
 }
 resource "azurerm_virtual_network" "demo" {
